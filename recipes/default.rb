@@ -14,8 +14,8 @@ template '/etc/failtome.sh' do
   mode 0755
 end
 
-template "#{node[:monit][:conf_dir]}/haproxywatch.monitrc" do
-  source 'haproxywatch.monitrc.erb'
+template "#{node[:monit][:conf_dir]}/eipwatch.monitrc" do
+  source 'eipwatch.monitrc.erb'
   owner 'root'
   group 'root'
   mode 0644
