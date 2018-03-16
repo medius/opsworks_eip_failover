@@ -15,7 +15,7 @@ if [ "$RET" = '0' -a "$OUT" != '<%= node[:stack][:primary_ip] %>' ]; then
  # Send notification
  aws --region <%= node[:opsworks][:instance][:region] %> sns publish \
   --topic-arn <%= node[:stack][:failover_topic] %> \
-  --subject "HAProxy failover notification" \
+  --subject "EIP failover notification for Opsworks stack <%= node[:opsworks][:stack][:name] %>" \
   --message \
   "In stack <%= node[:opsworks][:stack][:name] %>, instance <%= node[:opsworks][:instance][:hostname] %> (id: <%= node[:opsworks][:instance][:id] %>) took over <%= node[:stack][:primary_ip] %>"
 
