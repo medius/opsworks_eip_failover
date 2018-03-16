@@ -1,0 +1,8 @@
+check host <%= node[:stack][:primary_ip] %> with address <%= node[:stack][:primary_ip] %>
+    if failed
+        port <%= node[:eip_failover][:port] %>
+        protocol <%= node[:eip_failover][:protocol] %>
+        request <%= node[:eip_failover][:request_path] %>
+        timeout <%= node[:eip_failover][:timeout] %> seconds
+        for <%= node[:eip_failover][:cycles] cycles
+        then exec "/etc/failtome.sh
